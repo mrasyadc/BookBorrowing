@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
-                $table->id(); // Primary key
-                $table->string('title');
-                $table->string('author');
-                $table->bigInteger('price_per_day'); // Harga per hari
-                $table->timestamps(); // created_at and updated_at
+            $table->id(); // Primary key
+            $table->string('title');
+            $table->string('author');
+            $table->bigInteger('price_per_day'); // Harga per hari
+            $table->timestamps(); // created_at and updated_at
         });
     }
 

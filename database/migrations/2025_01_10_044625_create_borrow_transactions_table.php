@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('books_borrow_transaction', function (Blueprint $table) {
+        Schema::create('borrow_transactions', function (Blueprint $table) {
             $table->id(); // Primary key
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // FK to users
-            $table->foreignId('book_id')->constrained('books')->onDelete('cascade'); // FK to books
+            $table->foreignId('user_id')->constrained('users')->onDelete('restrict'); // FK to users
+            $table->foreignId('book_id')->constrained('books')->onDelete('restrict'); // FK to books
             $table->date('borrow_date');
             $table->date('return_date');
             $table->bigInteger('total_cost'); // Total biaya
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('books_borrow_transaction');
+        Schema::dropIfExists('borrow_transactions');
     }
 };
