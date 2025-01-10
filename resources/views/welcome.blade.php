@@ -59,7 +59,7 @@
                 abbr:where([title]) {
                     -webkit-text-decoration: underline dotted;
                     text-decoration: underline dotted;
-                }
+               }
                 h1,
                 h2,
                 h3,
